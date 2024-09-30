@@ -1,0 +1,115 @@
+.header-with-tab {
+  h1{
+    margin-bottom: -2.5em;
+    margin-top: 2em;
+    margin-left: 2em;
+  }
+}
+
+
+ 
+
+.example-stretched-tabs {
+   
+    width: 100%;
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+      
+  }
+  
+  .example-container {
+    width: 100vw;
+    height: 100vh;
+    
+     
+  }
+  
+  .example-sidenav-content {
+    // display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-right: 20px; /* Ajustez selon la largeur du tiroir */
+  }
+
+  
+
+
+  .example-sidenav {
+    padding: 3em;
+    background-color: #090909;
+  }
+
+  .close-btn {
+    margin-left:21.55em;
+  }
+  
+  .close-btn:hover {
+    cursor: pointer;
+    background-color: red;
+
+  }
+  
+
+
+  ::ng-deep .mat-tab-group {
+    
+    padding: 20px;
+    
+  }
+  
+  ::ng-deep .mat-tab-label {
+    background-color: #3f3f3f;
+    color: #f6f6f6;
+    min-width: 2px;
+
+    
+    font-weight: bold;
+    font-size: 15px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    
+  }
+  
+  
+  ::ng-deep .mat-tab-label:hover {
+    background-color: #090909;
+    color: #ffffff;
+  }
+
+  ::ng-deep mat-ink-bar {
+    display: none;
+  }
+  
+  
+  ::ng-deep .mat-tab-label.mat-tab-label-active {
+    background-color: #000000;
+    color: #fff;
+    border-radius: 30px;
+    
+  }
+
+  
+  
+  ::ng-deep .mat-tab-body {
+    // background-color: #1d1c1c;
+    // padding: 20px;
+    border-radius: 2px;
+  }
+  
+
+
+
+  
+
+
+ 
+  
+  
+  
+ 
+  

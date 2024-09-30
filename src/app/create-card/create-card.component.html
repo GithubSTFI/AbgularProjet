@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<section class="card-creation" [ngClass]="{ 'drawer-open': drawerOpened }">
+    <div class="block-card">
+        <div class="card">
+            <mat-card class="example-card">
+                <mat-card-subtitle class="title-card">{{subtitlecard}}</mat-card-subtitle>
+                <mat-card-title>{{titletextcard}}</mat-card-title>
+                <span class="material-symbols-outlined" (click)="openFormType('event')">
+                    add
+                </span>
+                
+                <mat-card-actions>
+                
+                
+                </mat-card-actions>  
+            </mat-card>
+        </div>
+
+        <div class="card">
+            <mat-card class="example-card">
+                <mat-card-subtitle>{{subtitltecard1}}</mat-card-subtitle>
+                <mat-card-title>{{titletextcard1}}</mat-card-title>
+                
+                <span class="material-symbols-outlined" (click)="openFormType('category')">
+                    add
+                </span>
+                
+                <mat-card-actions>
+                
+                
+                </mat-card-actions>  
+            </mat-card>
+        </div>
+
+        <div class="card">
+            <mat-card class="example-card">
+                <mat-card-subtitle>{{subtitlecard2}}</mat-card-subtitle>
+                <mat-card-title>{{titletextcard2}}</mat-card-title>
+                <span class="material-symbols-outlined" (click)="openFormType('location')">
+                    add
+                </span>
+                
+                <mat-card-actions>
+                
+                </mat-card-actions>  
+            </mat-card>
+        </div>
+    </div>
+</section>

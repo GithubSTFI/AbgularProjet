@@ -1,0 +1,49 @@
+<div class="form-card event-card">
+    <h2>NOUVEAU EVENEMENT</h2>
+    <form [formGroup]="eventForm" (ngSubmit)="onSubmitEvent()"> 
+
+        <div class="form-group">
+            <label for="titleEvent">Titre: </label>
+            <input id="titleEvent" type="text" formControlName="titleEvent">
+            
+        </div>
+
+        <div class="form-group">
+            <label for="descriptionEvent">Description:  </label>
+            <textarea id="descriptionEvent" type="text" formControlName="descriptionEvent" rows="4">
+            </textarea>
+            
+        </div>
+
+        <div class="form-group">
+            <label for="imageUrl">ImageUrl: </label>
+            <input id="imageUrl" type="text" formControlName="imageUrl">
+            
+        </div>
+
+        <div class="form-group">
+            <label for="dateEventStart">Date:</label>
+            <input id="dateEventStart" type="date" formControlName="dateEventStart">
+           
+        </div>
+
+        <div class="form-group">
+            <label for="isPaid">Payant</label>
+            <input id="isPaid" type="checkbox" formControlName="isPaid">   
+              
+        </div>
+
+        <div class="action-buttons">
+            <button type="submit"  [disabled]="eventForm.invalid">Enregistrer</button>
+        </div>
+
+    </form>
+</div>
+
+<div class="preview" *ngIf="eventPrevieuws$ | async as preview">
+    <h3>Prévisualisation</h3>
+    <p><strong>Titre:</strong> {{ preview.titleEvent }}</p>
+    <p><strong>Description:</strong> {{ preview.descriptionEvent }}</p>
+    <p><strong>Image:</strong> <img [src]="preview.imageUrl" alt="Image" style="max-width: 200px; max-height: 00px;"></p>
+    <p><strong>Date de début:</strong> {{ preview.dateEventStart | date:'shortDate' }}</p>
+  </div>

@@ -1,0 +1,12 @@
+
+            <div class="event-grid">
+              
+              <!-- Liste des catégories, chaque élément dans une carte -->
+              <mat-card class="event-card" *ngFor="let category of category">
+                <mat-card-title>{{ category.namecategory }}</mat-card-title>
+                <mat-card-content>
+                  <p>{{ category.descriptioncategory }}</p>
+                </mat-card-content>
+              </mat-card>
+      
+            </div>

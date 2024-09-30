@@ -1,0 +1,52 @@
+<div class="animated-background"></div>
+
+<mat-drawer-container class="example-container mat-drawer-opened" autosize>
+  <!-- Tiroir qui contient le formulaire de création -->
+  <mat-drawer #drawer class="example-sidenav" mode="side" position="end"  >
+    <ng-container [ngSwitch]="selectedForm">
+      <div *ngSwitchCase="'event'">
+        <button class="close-btn" (click)="closeDrawer()">&#x2715;</button>
+        <app-form-event ></app-form-event>
+      </div>
+      <div *ngSwitchCase="'category'">
+        <button class="close-btn" (click)="closeDrawer()">&#x2715;</button>
+        <app-form-category ></app-form-category>
+      </div>
+      <div *ngSwitchCase="'location'">
+        <button class="close-btn" (click)="closeDrawer()">&#x2715;</button>
+        <app-form-location ></app-form-location>
+      </div>
+    </ng-container>
+  </mat-drawer>
+
+  <!-- Contenu principal (onglets et cartes) -->
+  <div class="example-sidenav-content" >
+    <!-- Composant de cartes de création -->
+    <app-create-card (openForm)="openForms($event)"></app-create-card>
+
+    <!-- Onglets avec listes -->
+    <section class="card-event" style="padding:1px;">
+      <div class="header-with-tab">
+        <h1 *ngIf="selectedTab===0">Liste des Evenements</h1>
+        <h1 *ngIf="selectedTab===1">Liste des Categories</h1>
+        <h1 *ngIf="selectedTab===2">Liste des Lieux</h1>
+
+      <mat-tab-group mat-align-tabs="end" [(selectedIndex)]="selectedTab">
+          <mat-tab label="Événements" >
+             <app-event-list></app-event-list>
+          </mat-tab>
+          <mat-tab label="Catégories">
+             <app-category-list></app-category-list>
+          </mat-tab>
+          <mat-tab label="Lieux">
+             <app-location-list></app-location-list>
+          </mat-tab>
+      </mat-tab-group>
+     </div>
+    </section>
+  </div>
+</mat-drawer-container>
+
+
+
+

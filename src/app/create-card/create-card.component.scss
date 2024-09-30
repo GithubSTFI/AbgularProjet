@@ -1,0 +1,134 @@
+
+.card-creation {
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 16px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    
+}
+
+.block-card {
+    display: flex;
+    flex-wrap: nowrap; 
+    gap: 2em; 
+    justify-content: center; 
+    margin: 0; 
+   
+}
+
+.example-card {
+    flex: 1;
+    height: 20em;
+    width: 30em; 
+    border-radius: 20px;
+    text-align: center;
+}
+.example-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(87, 87, 87, 0.163);
+    background-color: #0a2020;
+    border-bottom: 1px solid orangered;
+    transition: transform 0.5s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+
+
+.material-symbols-outlined {
+    margin-top: 5px;
+    font-size: 10em;
+    cursor: pointer;
+    background-color: #C64320;
+    border-radius: 50%;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48;
+}
+
+.material-symbols-outlined:hover {
+    background-color: green;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+ 
+ /* ------------------ Media Queries ------------------- */
+ 
+ /* Pour les tablettes en mode paysage et les petits ordinateurs */
+ @media (max-width: 1330px) {
+     .block-card {
+         gap: 2em;
+        //  margin-left: 2em;
+        //  margin-right: 2em;
+     }
+     
+     .example-card {
+         width: 18em; /* Réduire légèrement la largeur */
+     }
+     
+     .material-symbols-outlined {
+         font-size: 10em; /* Réduire la taille de l'icône */
+     }
+ }
+ 
+ /* Pour les tablettes en mode portrait et petits écrans */
+ @media (max-width: 768px) {
+     .block-card {
+         gap: 2em;
+         flex-direction: column; /* Les cartes s'empilent en colonne */
+        
+         
+     }
+     
+     .example-card {
+          /* Les cartes prennent toute la largeur disponible */
+         max-width: 100%; /* Ne pas dépasser la largeur de l'écran */
+     }
+ 
+     .material-symbols-outlined {
+         font-size: 10em; /* Encore plus petit pour les écrans moyens */
+     }
+ }
+ 
+ /* Pour les petits smartphones */
+ @media (max-width: 480px) {
+     .block-card {
+         gap: 1em;
+         margin: 0.5em;
+     }
+     
+     .example-card {
+         width: 100%;
+     }
+ 
+     .material-symbols-outlined {
+         font-size: 9em; /* Réduire davantage l'icône pour les petits écrans */
+     }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

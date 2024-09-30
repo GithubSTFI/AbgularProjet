@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+            <div class="event-grid">
+              
+      
+              <!-- Liste des événements, chaque élément dans une carte -->
+              <mat-card class="event-card" *ngFor="let event of Events" >
+                <span *ngIf="event.isPaid" class="material-symbols-outlined paid-icon">star</span>
+
+                <mat-card-title>{{ event.titleEvent | titlecase }}</mat-card-title>
+
+                <mat-card-content>
+                  <img [src]="event.imageUrl" [alt]="event.titleEvent"> 
+                  <p> {{ event.descriptionEvent }}</p>
+                  <p><strong>Date de debut :</strong> {{ event.dateEventStart |date }}</p>
+                <p><button mat-button (click)="onLike(event)">{{event.userHasLiked ? 'Unlike' :'Like'}}👍 {{event.likes}}</button></p>   
+                </mat-card-content>
+
+                <mat-card-actions >
+                   <div class="button">
+                      <button mat-button (click)="onComment(event)">
+                        <span class="material-symbols-outlined">
+                        comment
+                        </span> 10</button>
+                      <button mat-button (click)="onShare(event)">
+                        <span class="material-symbols-outlined">
+                        share
+                        </span></button>
+                    </div>
+               </mat-card-actions>
+
+               <div *ngIf="event.showCommentForm">
+                <mat-form-field>
+                  <input matInput placeholder="Votre commentaire" [(ngModel)]="event.newComment">
+                </mat-form-field>
+                <button mat-button (click)="addComment(event)">Ajouter</button>
+              </div>
+              
+              <!-- Afficher les commentaires déjà ajoutés -->
+              <div *ngIf="event.comments && event.comments.length > 0">
+                <h4>Commentaires:</h4>
+                <ul>
+                  <li *ngFor="let comment of event.comments">{{ comment }}</li>
+                </ul>
+              </div>
+
+              </mat-card>
+      
+            </div>

@@ -1,0 +1,58 @@
+
+.form-card, .event-card {
+  box-sizing: border-box;
+  width: 97%;
+  height: 25em;
+  background-color: rgba(0, 0, 0, 0.395);
+  margin: 10px auto;
+  padding: 20px 30px;
+  border-top: 0.5px solid greenyellow ;
+  border-right: 2px solid orangered;
+  border-bottom: 2px solid burlywood;
+  box-shadow: rgb(83, 82, 82) 4px 4px 10px;
+  
+
+   
+}
+.form-group {
+  margin: 10px auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+label{
+  margin-right: 1em;
+}
+input, textarea {
+  margin-bottom:6px;
+  width: 100%;
+}
+
+.action-buttons {
+  width: 100%;
+  padding-top: 2px;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+}
+.event-card {
+  img {
+    width: 100%;
+  }
+  h2 {
+    margin-bottom: 0.5em;
+    text-align: center;
+  }
+  p {
+    font-weight: 300;
+    font-size: 16px;
+  }
+}
+
+
+
+

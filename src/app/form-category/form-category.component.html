@@ -1,0 +1,30 @@
+<div class="form-card category-card">
+    <h2>NOUVELLE CATEGORIE</h2>
+    <form [formGroup]="categoryForm" (ngSubmit)="onSubmitCategory()"> 
+
+        <div class="form-group">
+            <label for="namecategory">Titre: </label>
+            <input id="namecategory" type="text" formControlName="namecategory">
+            
+        </div>
+
+        <div class="form-group">
+            <label for="descriptioncategory">Description:  </label>
+            <textarea id="descriptioncategory" type="text" formControlName="descriptioncategory" rows="4">
+            </textarea>
+            
+        </div>
+
+        <div class="action-buttons">
+            <button type="submit"  [disabled]="categoryForm.invalid">Enregistrer</button>
+        </div>
+
+    </form>
+</div>
+
+<div class="preview" *ngIf="categoryPreviews$ | async as preview">
+    <h3>Prévisualisation</h3>
+    <p><strong>Nom:</strong> {{ preview.namecategory |uppercase }}</p>
+    <p><strong>Description:</strong> {{ preview.descriptioncategory }}</p>
+   
+  </div>

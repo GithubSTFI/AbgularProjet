@@ -1,0 +1,100 @@
+/* Grid layout for events */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colonnes */
+    gap: 16px; /* Espacement entre les cartes */
+    justify-items: center; /* Centre les cartes horizontalement */
+    margin-top: 2em;
+  }
+  
+  /* Style pour chaque carte d'événement */
+  .event-card {
+    box-sizing: border-box;
+    width: 100%; /* La carte prend toute la largeur de sa colonne */
+    max-width: 250px; /* Limite la largeur maximale de chaque carte */
+    padding: 10px 30px ;
+    margin-bottom: 4px;
+    // box-shadow: lightgray 4px 4px 20px;border: 2px solid transparent;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease-in-out;
+
+    transition: transform 0.3s ease-in-out;
+  }
+  .event-card:hover{
+    transform: rotateY(10deg) rotateX(30deg);
+    border-color: #3498db; // Couleur de la bordure à l'état survolé
+  }
+  
+  .event-card img {
+    width: 100%; /* L'image prend toute la largeur de la carte */
+  }
+  
+  .event-card h2 {
+    margin-bottom: 0;
+  }
+  
+  .event-card p {
+    font-weight: 100;
+    font-size: 14px;
+  }
+  h3 {
+    text-align: left; /* Centre le titre */
+    margin: 16px; /* Ajoute de l'espace en dessous du titre */
+    color: white;
+  }
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+.material-symbols-outlined{
+  font-size: 10px;
+}
+.text-yellow {
+  color: yellow; /* Couleur du texte pour les lieux privés */
+}
+
+.text-green {
+  color: green; /* Couleur du texte pour les lieux publics */
+}
+
+.icon-yellow {
+  color: yellow; /* Couleur de l'icône pour les lieux privés */
+  background-color: yellow;
+  border-radius: 50%;
+}
+
+.icon-green {
+  color: green; /* Couleur de l'icône pour les lieux publics */
+  background-color: green;
+  border-radius: 50%;
+}
+
+
+
+
+
+
+  /* Pour les écrans de taille moyenne (tablettes), réduire à 3 colonnes */
+@media (max-width: 1200px) {
+    .event-grid {
+      grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+    }
+  }
+  
+  /* Pour les écrans de taille moyenne (petites tablettes ou grands téléphones), réduire à 2 colonnes */
+  @media (max-width: 900px) {
+    .event-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    }
+  }
+  
+  /* Pour les petits écrans (téléphones), réduire à 1 colonne */
+  @media (max-width: 600px) {
+    .event-grid {
+      grid-template-columns: 1fr; /* 1 seule colonne */
+    }
+  }

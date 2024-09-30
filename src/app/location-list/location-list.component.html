@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+
+            <div class="event-grid">
+              
+      
+              <!-- Liste des lieux, chaque élément dans une carte -->
+              <mat-card class="event-card" *ngFor="let location of localisation">
+                <p [ngClass]="{'text-yellow': location.type === 'Privé', 'text-green': location.type === 'Public'}">
+                  <span class="material-symbols-outlined" [ngClass]="{'icon-yellow': location.type === 'Privé', 'icon-green': location.type === 'Public'}">
+                    circle
+                  </span>
+                  {{ location.type }}
+                </p>
+                <mat-card-title>{{ location.namelieu }}</mat-card-title>
+                <mat-card-content>
+                  <p>Description :{{ location.descriptionlieu }}</p>
+                  
+                  <p>Etat: {{location.etat}}</p>
+                </mat-card-content>
+              </mat-card>
+      
+            </div>

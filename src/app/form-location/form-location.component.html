@@ -1,0 +1,48 @@
+<div class="form-card location-card">
+    <h2>AJOUTER LIEU</h2>
+    <form [formGroup]="locationForm" (ngSubmit)="onSubmit()"> 
+
+        <div class="form-group">
+            <label for="namelieu">Titre: </label>
+            <input id="namelieu" type="text" formControlName="namelieu">
+            
+        </div>
+
+        <div class="form-group">
+            <label for="descriptionlieu">Description:  </label>
+            <textarea id="descriptionlieu" type="text" formControlName="descriptionlieu" rows="4">
+            </textarea>
+            
+        </div>
+
+        <div class="form-group">
+            <label for="type">Type lieu:  </label>
+            <select id="type"  formControlName="type" rows="4">
+                <option value="Privé">Privé</option>
+                <option value="Public">Public</option>
+            </select>
+            
+        </div>
+
+        <div class="form-group">
+            <label for="etat">Etat lieu:  </label>
+            <select id="etat"  formControlName="etat" rows="4">
+                <option value="occupé">Occupé</option>
+                <option value="libre">Libre</option>
+            </select>
+            
+        </div>
+
+        <div class="action-buttons">
+            <button type="submit"  [disabled]="locationForm.invalid">Enregistrer</button>
+        </div>
+
+    </form>
+</div>
+
+<div class="preview" *ngIf="localPreviews$ | async as preview">
+    <h3>Prévisualisation</h3>
+    <p><strong>Nom:</strong> {{ preview.namelieu |uppercase }}</p>
+    <p><strong>Description:</strong> {{ preview.descriptionlieu }}</p>
+   
+  </div>
